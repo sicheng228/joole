@@ -1,0 +1,19 @@
+<div class="bg">
+  <a id="signbtn" routerLink="/signup">Sign up</a>
+  <div class="innerDiv">
+    <span class="joole">j</span>
+    <span id="dot1"></span>
+    <span id="dot2"></span>
+    <span class="joole" style=" position:relative;left: -20px">le</span>
+    <p id="des">Buiding Project Seletion Platform</p>
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+
+      <p style="color:red" [hidden]="username.pristine||uname!=''">Reguired</p>
+      <input id="username" name="username" #username="ngModel" [(ngModel)]="uname" placeholder="Username or Email" required minlength="4"><br>
+      <p style="color:red" [hidden]="password.pristine||pword!=''">Reguired</p>
+      <input id="password" name="password" #password="ngModel" [(ngModel)]="pword" placeholder="password" required minlength="4"><br>
+
+      <button id="lgin" type="button" name="button"> Log in </button>
+    </form>
+  </div>
+</div>

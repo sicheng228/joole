@@ -1,0 +1,74 @@
+.bg{
+  height: 800px;
+  width:1420px;
+  background-image: linear-gradient(#99ccff, #e6f3ff ,white);
+}
+.innerDiv{
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  right: 25%;
+  top:20%;
+  text-align: center;
+}
+#signbtn{
+  position: absolute;
+  right:50px;
+  top:70px;
+  color: #696969;
+  font-size: 20px
+}
+.joole{
+  font-weight: bold;
+  color:#264d73;
+  font-size: 120px;
+  margin: 0;
+  font-family: Comic Sans MS;
+}
+#dot1 {
+  height: 60px;
+  width: 60px;
+  background-color: #004466;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+#dot2 {
+  height: 60px;
+  width: 60px;
+  background-color: #004466;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+  position: relative;
+  top: -15px;
+  left: -20px
+}
+#des{
+  color: #696969;
+  font-size:20px;
+  font-family:Helvetica;
+  font-weight: bold;
+
+}
+
+#search{
+  width: 400px;
+  height: 30px;
+  font-size:15px;
+  border-radius: 5px;
+  background: url(https://img.icons8.com/ios-filled/30/000000/search.png) no-repeat;
+  background-color: white;
+  background-position: right;
+}
+#home_search {
+  -webkit-appearance: none;
+
+	width: 150px;
+	border-radius: 5px;
+  height: 35px;
+  font-size:12px;
+  background: url(https://img.icons8.com/material-sharp/10/000000/give-way--v2.png)no-repeat;
+  background-color: #D0D0D0;
+  background-position: 130px 10px;
+}
