@@ -9,14 +9,14 @@
 #save{
   position:relative;
   left:30px;
-  top:6px;
+  top:2px;
   font-size:15px;
   color:gray;
 }
 #clear{
   position:relative;
   left:40px;
-  top:6px;
+  top:2px;
   font-size:15px;
   color:gray;
 }
@@ -28,11 +28,7 @@
     height: 40%;
     border: 0.1px solid gray;
 }
-
-.btn:hover {
-    background-color: #e5e5e5;
-}
-
-.btn:active {
+.btn:focus {
     background-color: #264d73;
+    color:white;
 }

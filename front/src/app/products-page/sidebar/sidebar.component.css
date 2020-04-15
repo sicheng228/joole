@@ -3,4 +3,5 @@
   height: 600px;
   background-color: white;
   border: solid 0.1px gray;
+  overflow:auto;
 }

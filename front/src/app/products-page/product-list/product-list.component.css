@@ -1,0 +1,67 @@
+.path{
+  font-size: 13px;
+  width: 200px;
+  position: relative;
+  left:20px;
+}
+.pl{
+  position: absolute;
+  border: solid 0.1px;
+  width: 1170px;
+  height: 600px;
+  top:110px;
+  left:260px;
+  overflow:auto
+}
+.product{
+  border: solid 0.1px gray;
+  width: 250px;
+  height: 400px;
+  margin: 20px;
+  float: left;
+}
+.pic{
+  height: 30%;
+  background-color: gray;
+  text-align: center;
+  margin: 0.1px;
+}
+.model{
+  font-size: 18px;
+  font-weight: bold;
+  color:#004466;
+  height: 15%;
+  text-align: center;
+}
+.ts{
+  height: 25%;
+  text-align: center;
+  color:#707070;
+  background-color:#E8E8E8;
+  font-size: 17px;
+  margin: 1px;
+}
+.ps{
+  height: 15%;
+  text-align: center;
+  font-size: 15px;
+  color: red;
+}
+.btns{
+  height: 15%;
+  position: relative;
+  top:-10px;
+}
+.btn1{
+  position: relative;
+  left: 30px;
+}
+.btn2{
+  position: relative;
+  left: 80px;
+}
+p{
+  height: 15%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

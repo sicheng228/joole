@@ -1,0 +1,31 @@
+
+.filter{
+  text-align: center;
+  padding: 2px 2px 2px 2px;
+}
+.rightBox{
+  border: solid 0.1px;
+  width: 24%;
+  float: left;
+  position: relative;
+  right: -10px;
+}
+.leftBox{
+  border: solid 0.1px;
+  width: 24%;
+  float: left;
+  position: relative;
+  left: -10px;
+}
+.slider{
+  position: relative;
+  top:-10px;
+  width: 50%;
+  height: 20px;
+  float: left;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+input{
+  text-align: center;
+}

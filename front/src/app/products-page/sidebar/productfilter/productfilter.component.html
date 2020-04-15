@@ -1,0 +1,41 @@
+<div class="filter">
+  <nz-collapse >
+      <nz-collapse-panel
+        nzHeader="Product Type" >
+      </nz-collapse-panel>
+
+      <nz-collapse-panel
+        nzHeader="Technical Specification" >
+      <div *ngFor="let item of ts" class="filter">
+        <span>{{item.filterName}}</span><br>
+        <input class="leftBox" type="text" [(ngModel)]="item.filterRange[0]">
+        <div class="slider">
+          <nz-slider [nzStep]="0.1" [(ngModel)]="item.filterRange" [nzMax]="item.max" [nzMin]="item.min" nzRange></nz-slider>
+        </div>
+        <input class="rightBox" type="text" [(ngModel)]="item.filterRange[1]">
+        <br>
+      </div>
+      </nz-collapse-panel>
+
+      <nz-collapse-panel
+        nzHeader="Brand" >
+      </nz-collapse-panel>
+
+      <nz-collapse-panel
+        nzHeader="Past Seletion" >
+      <div *ngFor="let item of ps" class="filter">
+        <span>{{item.filterName}}</span><br>
+        <input class="leftBox" type="text" [(ngModel)]="item.filterRange[0]">
+        <div class="slider">
+          <nz-slider [nzStep]="0.1" [(ngModel)]="item.filterRange"  [nzMax]="item.max" [nzMin]="item.min" nzRange></nz-slider>
+        </div>
+        <input class="rightBox" type="text" [(ngModel)]="item.filterRange[1]">
+        <br>
+      </div>
+      </nz-collapse-panel>
+
+      <nz-collapse-panel
+        nzHeader="Certifications" >
+      </nz-collapse-panel>
+    </nz-collapse>
+</div>

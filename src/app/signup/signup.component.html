@@ -6,13 +6,17 @@
     <span id="dot2"></span>
     <span class="joole" style=" position:relative;left: -20px">le</span>
     <p id="des">Buiding Project Seletion Platform</p>
+
+
     <form (submit)="onSignup(SignupForm)" #SignupForm="ngForm">
+
       <p style="color:red" [hidden]="username.pristine||uname!=''">Reguired</p>
       <input id="username" name="username" #username="ngModel" [(ngModel)]="uname" placeholder="Username or Email" required minlength="4"><br>
       <p style="color:red" [hidden]="password1.pristine||pword1!=''">Reguired</p>
       <input class="password" name="password1" #password1="ngModel" [(ngModel)]="pword1" placeholder="password" required minlength="4"><br>
       <p style="color:red" [hidden]="password2.pristine||pword1==pword2">not match</p>
       <input class="password" name="password2" #password2="ngModel" [(ngModel)]="pword2" placeholder="password again" required minlength="4"><br>
+
       <button id="sgup" type="submit" name="button"> Signup </button>
     </form>
 
