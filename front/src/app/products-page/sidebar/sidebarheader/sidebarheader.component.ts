@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebarheader.component.css']
 })
 export class SidebarheaderComponent implements OnInit {
-
+  show=true;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  showprd(){
+    this.show=true;
+  }
+  showprj(){
+    this.show=false;
   }
 
 }

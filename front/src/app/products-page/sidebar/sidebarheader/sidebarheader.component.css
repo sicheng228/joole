@@ -28,7 +28,13 @@
     height: 40%;
     border: 0.1px solid gray;
 }
-.btn:focus {
+.blue{
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    width:50%;
+    height: 40%;
+    border: 0.1px solid gray;
     background-color: #264d73;
     color:white;
 }

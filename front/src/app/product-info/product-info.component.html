@@ -1,1 +1,140 @@
-<p>product-info works!</p>
+<app-searchheader></app-searchheader>
+<div class="info">
+  <div class="path">
+    mechanical > fans >item series
+  </div>
+  <div class="infoheader">
+    <div class="pic">
+      pic
+    </div>
+    <div class="model">
+      Big Ass > Hsada H > bl  - ablabsa-cala
+    </div>
+    <div class="ps">
+      blablablbs   lala >     sfdl fslajbf dsjalbljblablala
+    </div>
+    <select class="btn">
+      <option value="0">Add to</option>
+      <option value="1">Audi</option>
+      <option value="2">BMW</option>
+      <option value="3">Citroen</option>
+      <option value="4">Ford</option>
+    </select>
+  </div>
+  <div class="title">
+    <div [ngClass]="{'SDDT': true, 'SDDT_active': true}">
+      Product Summary
+    </div>
+    <div [ngClass]="{'SDDT': true, 'SDDT_active': false}">
+      Product Details
+    </div>
+    <div [ngClass]="{'SDDT': true, 'SDDT_active': false}">
+      Product Documentation
+    </div>
+    <div [ngClass]="{'SDDT': true, 'SDDT_active': false}">
+      Contact
+    </div>
+  </div>
+  <div class="context">
+    <div class="summary">
+      <span class="contextTitle">Product Summary</span><br>
+      <div class="t">
+        <div class="t_title">
+          DESCRIPTION
+        </div>
+        <table>
+          <tr *ngFor="let i of [1,2,3]">
+            <td class="name">
+              name
+            </td>
+            <td>
+              value
+            </td>
+          </tr>
+        </table>
+        <div class="t_title">
+          TYPE
+        </div>
+        <table>
+          <tr *ngFor="let i of [1,2,3,4,5]">
+            <td class="name">
+              name
+            </td>
+            <td>
+              value
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="t">
+        <div class="t_title">
+          TECHNICHAL SPECIFICATION
+        </div>
+        <table>
+          <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
+            <td class="name">
+              name
+            </td>
+            <td>
+              value
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="detail">
+      <span class="contextTitle">Product Details</span><br>
+      <div class="t" style="width:100%;">
+        <div class="t_title">
+          SERIES INFO
+        </div>
+        <table>
+          <tr *ngFor="let item of [1,2,3,3,4,5,6,7,8,9,0,1,2]; let i = index;">
+            <td [ngClass]="{'name': i%2==0}">
+              name
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="docu">
+      <span class="contextTitle">Product Documentations</span><br>
+    </div>
+    <div class="contact">
+      <span class="contextTitle">Contact</span><br>
+      <div class="t">
+        <div class="t_title">
+          SALES REP
+        </div>
+        <table>
+          <tr *ngFor="let i of [1,2,3,4]">
+            <td class="name">
+              name
+            </td>
+            <td>
+              value
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="t">
+        <div class="t_title">
+          MANUFACTURER
+        </div>
+        <table>
+          <tr *ngFor="let i of [1,2,3,4]">
+            <td class="name">
+              name
+            </td>
+            <td>
+              value
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    </div>
+
+  </div>

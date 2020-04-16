@@ -1,5 +1,5 @@
 <div class="sidebar">
-    <app-sidebarheader></app-sidebarheader>
-    <app-productfilter></app-productfilter>
-    <!-- <router-outlet></router-outlet> -->
+    <app-sidebarheader #sbh></app-sidebarheader>
+    <app-productfilter *ngIf="sbh.show"></app-productfilter>
+    <app-projectfilter *ngIf="!sbh.show"></app-projectfilter>
 </div>

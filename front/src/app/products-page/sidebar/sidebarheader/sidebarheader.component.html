@@ -4,10 +4,10 @@
     <button id="save">save</button>
     <button id="clear">clear</button>
   </div>
-  <div class="btn" onclick="changeColor()">
+  <div [ngClass]="{'btn': true, 'blue': show}" (click)="showprd()">
      product
   </div>
-  <div class="btn" onclick="changeColor()">
+  <div [ngClass]="{'btn': true, 'blue': !show}" (click)="showprj()">
     project
   </div>
 </div>

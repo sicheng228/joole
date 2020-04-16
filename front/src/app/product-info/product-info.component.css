@@ -1,0 +1,126 @@
+.info{
+  height: 700px;
+  border: solid 0.1px gray;
+}
+.path{
+  height: 40px;
+  margin-left: 20px;
+}
+.infoheader{
+  height: 60px;
+  border: solid 0.1px gray;
+}
+.pic{
+  width: 10%;
+  height: 100%;
+  float: left;
+}
+.model{
+  text-align: center;
+  width: 40%;
+  height: 100%;
+  float: left;
+  font-size: 21px;
+  color: #004466;
+  padding-top: 15px;
+  font-weight: bold;
+}
+.ps{
+  text-align: center;
+  width: 40%;
+  height: 100%;
+  float: left;
+  font-size: 18px;
+  color: red;
+  padding-top: 18px;
+}
+.btn{
+  margin-top: 20px;
+}
+.title{
+  height: 40px;
+  border: solid 0.1px gray;
+}
+.SDDT{
+  width: 200px;
+  height: 100%;
+  float: left;
+  border:solid 0.1px gray;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 8px;
+  color: black;
+  background-color:#F0F0F0;
+}
+.SDDT_active{
+  width: 200px;
+  height: 100%;
+  float: left;
+  border:solid 0.1px gray;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 8px;
+  color: white;
+  background-color:gray;
+  font-weight: bold;
+}
+.context{
+  height: 538px;
+  overflow: scroll;
+}
+.contextTitle{
+  font-size: 22px;
+  color: #004466;
+  font-weight: bold;
+}
+.summary{
+  height: 400px;
+  padding: 20px;
+}
+.t{
+  height: 320px;
+  width: 669px;
+  float: left;
+  margin-right: 20px;
+  border-top: solid 1px gray;
+}
+table{
+  height: 20px;
+  width: 100%;
+  border-bottom: solid 1px gray;
+}
+tr{
+  height:33px;
+  border-top: solid 1px #F0F0F0;
+  border-bottom: solid 1px ##F0F0F0;
+}
+td{
+  padding-left: 10px;
+}
+.t_title{
+  height: 33px;
+  width: 100%;
+  border-bottom: solid 1px gray;
+  color: #383838;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+.name{
+  margin-left: 10px;
+  width: 30%;
+  background-color: #F0F0F0;
+}
+.detail{
+  padding: 20px;
+  height: 600px;
+}
+.docu{
+  background-color: gray;
+  height: 400px;
+  padding: 20px;
+}
+.contact{
+  height: 200px;
+  padding: 20px;
+}

@@ -49,11 +49,12 @@
   left:300px;
 	width: 150px;
 	border-radius: 5px;
-  height: 25px;
-  font-size:12px;
+  height: 20px;
+  font-size:14px;
   background: url(https://img.icons8.com/material-sharp/10/000000/give-way--v2.png)no-repeat;
   background-color: #D0D0D0;
-  background-position: 130px 10px;
+  background-position: 130px 5px;
+  padding-left: 10px;
 }
 #pic{
   position:absolute;

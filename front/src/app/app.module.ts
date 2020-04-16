@@ -22,10 +22,8 @@ import { ProjectfilterComponent } from "./products-page/sidebar/projectfilter/pr
 import { SidebarheaderComponent } from "./products-page/sidebar/sidebarheader/sidebarheader.component";
 import { ProductListComponent } from './products-page/product-list/product-list.component';
 //productInfo
-// import { ProductInfoComponent } from './product-info/product-info.component';
-// import { ProductSummaryComponent } from './product-info/product-summary/product-summary.component';
-// import { ProductDocumentationComponent } from './product-info/product-documentation/product-documentation.component';
-// import { ProductContactComponent } from './product-info/product-contact/product-contact.component';
+import { ProductInfoComponent } from './product-info/product-info.component';
+import { ProductCompareComponent } from './product-compare/product-compare.component';
 
 registerLocaleData(en);
 
@@ -41,11 +39,9 @@ registerLocaleData(en);
     ProjectfilterComponent,
     SidebarheaderComponent,
     ProductListComponent,
-    // ProductInfoComponent,
-    // ProductSummaryComponent,
-    // ProductDocumentationComponent,
-    // ProductContactComponent,
-    ProductsPageComponent
+    ProductInfoComponent,
+    ProductsPageComponent,
+    ProductCompareComponent
     ],
   imports: [
     BrowserModule,

@@ -1,0 +1,40 @@
+.info{
+  height: 700px;
+  border: solid 0.1px gray;
+  overflow: auto;
+}
+.path{
+  height: 40px;
+  margin-left: 20px;
+}
+.compare{
+  margin: 20px;
+}
+.t_title{
+  height: 33px;
+  border: solid 1px gray;
+  color: #383838;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+.pic{
+  height:100px;
+  background-color: gray;
+}
+.name{
+  margin-left: 10px;
+  background-color: #F0F0F0;
+  height: 33px;
+  width: 180px;
+  border-left: solid 1px gray;
+  border-right: solid 1px gray;
+}
+.detail{
+  text-align: center;
+  width: 180px;
+  height: 33px;
+  border-left: solid 1px gray;
+  border-right: solid 1px gray;
+  border-bottom: solid 1px #F0F0F0;
+}
