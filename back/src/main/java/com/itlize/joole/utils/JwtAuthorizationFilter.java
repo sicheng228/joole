@@ -23,7 +23,8 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
-                                    HttpServletResponse response, FilterChain chain)
+                                    HttpServletResponse response,
+                                    FilterChain chain)
             throws IOException, ServletException {
         Authentication authentication = jwtTokenProvider.getAuthentication(request);
 
@@ -31,6 +32,5 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
         chain.doFilter(request, response);
-
     }
 }
