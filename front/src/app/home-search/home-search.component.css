@@ -57,13 +57,13 @@
   height: 30px;
   font-size:15px;
   border-radius: 5px;
-  background: url(https://img.icons8.com/ios-filled/30/000000/search.png) no-repeat;
   background-color: white;
   background-position: right;
+  position: relative;
+  top:-3px;
 }
 #home_search {
   -webkit-appearance: none;
-
 	width: 150px;
 	border-radius: 5px;
   height: 30px;

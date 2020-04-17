@@ -36,7 +36,6 @@ export class FilterService {
 
   targetProduct;
   compareProducts;
-
   setTargetProduct(item){
     this.targetProduct=item;
   }

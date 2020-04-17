@@ -19,5 +19,4 @@ export class ProductfilterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

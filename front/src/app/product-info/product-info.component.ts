@@ -8,6 +8,7 @@ import { FilterService } from 'src/app/service/filter.service';
 })
 export class ProductInfoComponent implements OnInit {
   product;
+  page;
 
   DESCRIPTION = ["manufacturer",'series',"model"]
   TYPE=["use_type", "application", "mounting_location", "accessories", "model_year"]
@@ -23,5 +24,7 @@ export class ProductInfoComponent implements OnInit {
     this.product=this.filterService.targetProduct;
   }
 
-
+  mouseEnter(page){
+    this.page=page;
+  }
 }

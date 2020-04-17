@@ -22,21 +22,21 @@
     </select>
   </div>
   <div class="title">
-    <div [ngClass]="{'SDDT': true, 'SDDT_active': true}">
+    <div [ngClass]="{'SDDT': true, 'SDDT_active':'summary'==page }">
       Product Summary
     </div>
-    <div [ngClass]="{'SDDT': true, 'SDDT_active': false}">
+    <div [ngClass]="{'SDDT': true, 'SDDT_active': 'detail'==page }">
       Product Details
     </div>
-    <div [ngClass]="{'SDDT': true, 'SDDT_active': false}">
+    <div [ngClass]="{'SDDT': true, 'SDDT_active': 'document'==page }">
       Product Documentation
     </div>
-    <div [ngClass]="{'SDDT': true, 'SDDT_active': false}">
+    <div [ngClass]="{'SDDT': true, 'SDDT_active': 'contact'==page }">
       Contact
     </div>
   </div>
   <div class="context">
-    <div class="summary">
+    <div class="summary" (mouseenter) ="mouseEnter('summary')">
       <span class="contextTitle">Product Summary</span><br>
       <div class="t">
         <div class="t_title">
@@ -101,7 +101,7 @@
       </div>
     </div>
 
-    <div class="detail">
+    <div class="detail" (mouseenter) ="mouseEnter('detail') ">
       <span class="contextTitle">Product Details</span><br>
       <div class="t" style="width:100%;">
         <div class="t_title">
@@ -117,10 +117,54 @@
       </div>
     </div>
 
-    <div class="docu">
+    <div class="docu" (mouseenter) ="mouseEnter('document') ">
       <span class="contextTitle">Product Documentations</span><br>
+      <table>
+      <tr class="file">
+        <td>
+          <img src="https://img.icons8.com/ios/50/000000/ms-word.png"/>
+          <a class="left_text">CSI – Three Part Specification (DOC)</a>
+        </td>
+
+        <td>
+          <img class="right_icon" src="https://img.icons8.com/ios/50/000000/file.png"/>
+          <a class="left_text">BIM (RVT)</a>
+        </td>
+      </tr>
+
+      <tr class="file">
+        <td>
+          <img src="https://img.icons8.com/ios/50/000000/pdf-2--v1.png"/>
+          <a class="left_text">Submittal (PDF)</a>
+        </td>
+
+        <td>
+          <img class="right_icon" src="https://img.icons8.com/ios/50/000000/dwg.png"/>
+          <a class="left_text">Elevation Views (DWG)</a>
+        </td>
+      </tr>
+
+      <tr class="file">
+        <td>
+          <img src="https://img.icons8.com/ios/50/000000/pdf-2--v1.png"/>
+          <a class="left_text">Control Options (PDF)</a>
+        </td>
+
+        <td>
+          <img class="right_icon" src="https://img.icons8.com/ios/50/000000/dwg.png"/>
+          <a class="left_text">Elevation Views (DWG)</a>
+        </td>
+      </tr>
+
+      <tr class="file">
+        <td>
+          <img src="https://img.icons8.com/ios/50/000000/pdf-2--v1.png"/>
+          <a class="left_text">Photometric Data (PDF)</a>
+        </td>
+      </tr>
+      </table>
     </div>
-    <div class="contact">
+    <div class="contact" (mouseenter) ="mouseEnter('contact') ">
       <span class="contextTitle">Contact</span><br>
       <div class="t">
         <div class="t_title">

@@ -91,6 +91,7 @@ table{
   width: 100%;
   border-bottom: solid 1px gray;
   color: black;
+  border: black 2px;
 }
 tr{
   height:33px;
@@ -119,11 +120,22 @@ td{
   height: 600px;
 }
 .docu{
-  background-color: gray;
   height: 400px;
   padding: 20px;
 }
 .contact{
   height: 200px;
   padding: 20px;
+}
+.file{
+  height: 80px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+.file td{
+  width: 300px;
+}
+.left_text{
+  position: relative;
+  left: 50px;
 }
