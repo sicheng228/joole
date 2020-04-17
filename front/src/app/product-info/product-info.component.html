@@ -108,9 +108,9 @@
           SERIES INFO
         </div>
         <table>
-          <tr *ngFor="let item of [1,2,3,3,4,5,6,7,8,9,0,1,2]; let i = index;">
+          <tr *ngFor="let detail of details; let i = index;">
             <td [ngClass]="{'name': i%2==0}">
-              name
+              {{detail}}
             </td>
           </tr>
         </table>
@@ -171,12 +171,12 @@
           SALES REPRESENTATIVE
         </div>
         <table>
-          <tr *ngFor="let i of [1,2,3,4]">
+          <tr *ngFor="let item of sale">
             <td class="name">
-              name
+              {{item}}
             </td>
             <td>
-              value
+              {{product['sale_'+item]}}
             </td>
           </tr>
         </table>
@@ -186,17 +186,16 @@
           MANUFACTURER
         </div>
         <table>
-          <tr *ngFor="let i of [1,2,3,4]">
+          <tr *ngFor="let item of manu">
             <td class="name">
-              name
+              {{item}}
             </td>
             <td>
-              value
+              {{product['manu_'+item]}}
             </td>
           </tr>
         </table>
       </div>
     </div>
     </div>
-
   </div>

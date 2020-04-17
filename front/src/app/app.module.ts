@@ -19,7 +19,7 @@ import { ProductsPageComponent } from './products-page/products-page.component';
 import { SidebarComponent } from './products-page/sidebar/sidebar.component';
 import { ProductfilterComponent } from "./products-page/sidebar/productfilter/productfilter.component";
 import { ProjectfilterComponent } from "./products-page/sidebar/projectfilter/projectfilter.component";
-import { SidebarheaderComponent } from "./products-page/sidebar/sidebarheader/sidebarheader.component";
+// import { SidebarheaderComponent } from "./products-page/sidebar/sidebarheader/sidebarheader.component";
 import { ProductListComponent } from './products-page/product-list/product-list.component';
 //productInfo
 import { ProductInfoComponent } from './product-info/product-info.component';
@@ -41,7 +41,7 @@ registerLocaleData(en);
     SidebarComponent,
     ProductfilterComponent,
     ProjectfilterComponent,
-    SidebarheaderComponent,
+    // SidebarheaderComponent,
     ProductListComponent,
     ProductInfoComponent,
     ProductsPageComponent,

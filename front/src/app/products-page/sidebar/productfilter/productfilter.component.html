@@ -4,7 +4,7 @@
         nzHeader="Product Type" >
       </nz-collapse-panel>
       <div style="background-color:white;height:40px;padding-top:6px;">
-        Model Year <input type="number" style="width:50px;"> —— <input type="number" style="width:50px;">
+        Model Year <input [(ngModel)]="year1" type="number" style="width:50px;"> —— <input [(ngModel)]="year2" type="number" style="width:50px;">
       </div>
       <nz-collapse-panel
         nzHeader="Technical Specification" >

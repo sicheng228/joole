@@ -1,5 +1,17 @@
 <div class="sidebar">
-    <app-sidebarheader #sbh></app-sidebarheader>
-    <app-productfilter *ngIf="sbh.show"></app-productfilter>
-    <app-projectfilter *ngIf="!sbh.show"></app-projectfilter>
+  <div class="header">
+    <div class="search">
+      <span style="position:relative;left:20px;top:6px;font-size:20px;color:gray;">search</span>
+      <button id="save" (click)="productfilter.limits()">save</button>
+      <button id="clear" (click)="productfilter.clear()">clear</button>
+    </div>
+    <div [ngClass]="{'btn': true, 'blue': show}" (click)="showprd()">
+       product
+    </div>
+    <div [ngClass]="{'btn': true, 'blue': !show}" (click)="showprj()">
+      project
+    </div>
+  </div>
+    <app-productfilter #productfilter ></app-productfilter>
+    <app-projectfilter *ngIf="!show"></app-projectfilter>
 </div>

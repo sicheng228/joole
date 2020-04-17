@@ -83,12 +83,12 @@ public class JwtTokenProvider {
                 .signWith(SignatureAlgorithm.HS512, jwtSecret).compact();
     }
 
-    public Authentication getAuthentication(HttpServletRequest request){
+    public Authentication getAuthentication(HttpServletRequest request){//check password
         String token = resolveToken(request);
         if(token == null){
             return null;
         }
-        Claims claims = Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody();
+        Claims claims = Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody();//payload
         String username = claims.getSubject();
         List<GrantedAuthority> authorities = Arrays.stream(claims.get("roles").toString().split(","))
                 .map(role -> role.startsWith("ROLE_")? role:"ROLE_"+role)

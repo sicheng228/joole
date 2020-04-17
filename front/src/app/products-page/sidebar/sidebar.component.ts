@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   constructor() { }
-
+  show=true;
   ngOnInit(): void {
+  }
+  showprd(){
+    this.show=true;
+  }
+  showprj(){
+    this.show=false;
   }
 
 }

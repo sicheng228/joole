@@ -49,7 +49,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 //These are public pages.
                 .antMatchers("/error", "/users/**").permitAll()
-                .antMatchers("/users/admin/**").hasRole("ADMIN")
+//                .antMatchers("/users/admin/**").hasRole("ADMIN")//has authorities("ROLE_)
                 .anyRequest().fullyAuthenticated()
                 .and()
                 .logout().permitAll()

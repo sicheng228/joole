@@ -12,11 +12,8 @@ public class User {
     private Integer uid;
     private String username;
     private String password;
-    private String register_date;
     @Transient
     private String token;
-    @OneToMany(cascade = CascadeType.REMOVE,mappedBy = "user")
-    private Collection<ProductUser> pu = new HashSet<ProductUser>();
 
     public User() {
     }
@@ -40,14 +37,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Collection<ProductUser> getPu() {
-        return pu;
-    }
-
-    public void setPu(Collection<ProductUser> pu) {
-        this.pu = pu;
     }
 
     public String getToken() {

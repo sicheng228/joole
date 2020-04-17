@@ -34,11 +34,97 @@ public class Product {
     private Double weight;
     private Integer firm;
     private Integer glob;
+    private String detail;
+    private String sale_name;
+    private String sale_phone;
+    private String sale_email;
+    private String sale_web;
+    private String manu_department;
+    private String manu_phone;
+    private String manu_email;
+    private String manu_web;
 
+    public Integer getPid() {
+        return pid;
+    }
 
-    @OneToMany(cascade = CascadeType.REMOVE,mappedBy = "product")
-    private Collection<ProductUser> pu = new HashSet<ProductUser>();
-// must have getter and setter then use json mapper
+    public void setPid(Integer pid) {
+        this.pid = pid;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    public String getSale_name() {
+        return sale_name;
+    }
+
+    public void setSale_name(String sale_name) {
+        this.sale_name = sale_name;
+    }
+
+    public String getSale_phone() {
+        return sale_phone;
+    }
+
+    public void setSale_phone(String sale_phone) {
+        this.sale_phone = sale_phone;
+    }
+
+    public String getSale_email() {
+        return sale_email;
+    }
+
+    public void setSale_email(String sale_email) {
+        this.sale_email = sale_email;
+    }
+
+    public String getSale_web() {
+        return sale_web;
+    }
+
+    public void setSale_web(String sale_web) {
+        this.sale_web = sale_web;
+    }
+
+    public String getManu_department() {
+        return manu_department;
+    }
+
+    public void setManu_department(String manu_department) {
+        this.manu_department = manu_department;
+    }
+
+    public String getManu_phone() {
+        return manu_phone;
+    }
+
+    public void setManu_phone(String manu_phone) {
+        this.manu_phone = manu_phone;
+    }
+
+    public String getManu_email() {
+        return manu_email;
+    }
+
+    public void setManu_email(String manu_email) {
+        this.manu_email = manu_email;
+    }
+
+    public String getManu_web() {
+        return manu_web;
+    }
+
+    public void setManu_web(String manu_web) {
+        this.manu_web = manu_web;
+    }
+
+    // must have getter and setter then use json mapper
     public String getManufacturer() {
         return manufacturer;
     }
@@ -223,13 +309,6 @@ public class Product {
         this.glob = glob;
     }
 
-    public Collection<ProductUser> getPu() {
-        return pu;
-    }
-
-    public void setPu(Collection<ProductUser> pu) {
-        this.pu = pu;
-    }
     //    @Override
 //    public String toString(){
 //        return "User[" +

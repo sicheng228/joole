@@ -35,10 +35,8 @@ public class UserServiceImp implements UserService {
         if (userDAO.getUserByName(u.getUsername())==null){
             u.setPassword(passwordEncoder.encode(u.getPassword()));
             userDAO.addUser(u);
-            System.out.println("aaa");
             return true;
         }else{
-            System.out.println("bbb");
             return false;
         }
 
