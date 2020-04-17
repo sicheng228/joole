@@ -2,29 +2,31 @@
   <div class="path">
     idontknow>>>>>whatever
   </div>
-  <div *ngFor="let item of products" class="product">
-    <div class="pic">
-      picture
-    </div>
-    <div class="model">
-      <p>{{item.manufacturer}}</p>
-      <p>{{item.model}}</p>
-      <p>{{item.series}}</p>
-    </div>
-    <div class="ts">
-      <p>{{item.airflow}} CFM</p>
-      <p>{{item.power_max}} W at max speed</p>
-      <p>{{item.sound_at_max_speed}} dBA at max speed</p>
-      <p>{{item.fan_sweep_diameter}}” fan sweep diameter</p>
-    </div>
+  <div *ngFor="let item of products;" class="product">
+    <div (click)="targetThisProduct(item)" routerLink="/productsInfo">
+      <div class="pic">
+        picture
+      </div>
+      <div class="model">
+        <p>{{item.manufacturer}}</p>
+        <p>{{item.model}}</p>
+        <p>{{item.series}}</p>
+      </div>
+      <div class="ts">
+        <p>{{item.airflow}} CFM</p>
+        <p>{{item.power_max}} W at max speed</p>
+        <p>{{item.sound_at_max_speed}} dBA at max speed</p>
+        <p>{{item.fan_sweep_diameter}}” fan sweep diameter</p>
+      </div>
 
-    <div class="ps">
-      <p>Past specifications:</p>
-      <p>{{item.firm}} firm / {{item.glob}} global</p>
+      <div class="ps">
+        <p>Past specifications:</p>
+        <p>{{item.firm}} firm / {{item.glob}} global</p>
+      </div>
     </div>
     <div class="btns">
-      <input class="btn1"type="checkbox">
-      <span style="font-size:15px;position:relative;left:50px;">Compare</span>
+      <input class="btn1"type="checkbox" (change)="handleCheckbox($event, item)">
+      <span style="font-size:15px;position:relative;left:50px;" >Compare</span>
       <select class="btn2">
         <option value="0">Add to</option>
         <option value="1">Audi</option>
@@ -34,5 +36,6 @@
       </select>
     </div>
   </div>
+  <button type="button" routerLink="/productsCompare" (click)="goToCompare()" style="background-color:#4682B4; position:relative; top:392px; color:white">Go To Compare</button>
 
 </div>

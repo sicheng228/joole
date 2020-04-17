@@ -7,17 +7,18 @@ import { NgForm } from "@angular/forms";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
+  uname;
+  pword;
 
-  uname:string;
-  pword:string;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  onLogin(form: NgForm) {
+  if (form.invalid) {
+    return;
   }
-  onLogin(form){
-
-  }
+  // this.isLoading = true;
+  // this.authService.login(form.value.username, form.value.password);
+  console.log(form.value.username+ form.value.password)
+}
 
 }

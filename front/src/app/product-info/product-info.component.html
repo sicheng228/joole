@@ -8,10 +8,10 @@
       pic
     </div>
     <div class="model">
-      Big Ass > Hsada H > bl  - ablabsa-cala
+      {{product.manufacturer}} > {{product.series}} > {{product.model}}
     </div>
     <div class="ps">
-      blablablbs   lala >     sfdl fslajbf dsjalbljblablala
+      Past specifications: {{product.firm}} firm / {{product.glob}} global
     </div>
     <select class="btn">
       <option value="0">Add to</option>
@@ -43,12 +43,12 @@
           DESCRIPTION
         </div>
         <table>
-          <tr *ngFor="let i of [1,2,3]">
+          <tr *ngFor="let attr of DESCRIPTION; let i=index;">
             <td class="name">
-              name
+              {{attr}}
             </td>
             <td>
-              value
+              {{product[attr]}}
             </td>
           </tr>
         </table>
@@ -56,12 +56,12 @@
           TYPE
         </div>
         <table>
-          <tr *ngFor="let i of [1,2,3,4,5]">
+          <tr *ngFor="let attr of TYPE; let i=index;">
             <td class="name">
-              name
+              {{attr}}
             </td>
             <td>
-              value
+              {{product[attr]}}
             </td>
           </tr>
         </table>
@@ -71,12 +71,30 @@
           TECHNICHAL SPECIFICATION
         </div>
         <table>
-          <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
+          <tr *ngFor="let attr of TS; let i=index;">
             <td class="name">
-              name
+              {{attr+unit[i]}}
             </td>
             <td>
-              value
+              {{product[attr]}}
+            </td>
+            <td *ngFor="let i of [1,2,3]"></td>
+          </tr>
+          <tr *ngFor="let attr of TS_plus; let i=index;">
+            <td class="name">
+              {{attr+unit[i+5]}}
+            </td>
+            <td style="background-color:#F0F0F0;text-align:center">
+              min
+            </td>
+            <td>
+              {{product[attr+'_min']}}
+            </td>
+            <td style="background-color:#F0F0F0;text-align:center">
+              max
+            </td>
+            <td>
+              {{product[attr+'_max']}}
             </td>
           </tr>
         </table>
@@ -106,7 +124,7 @@
       <span class="contextTitle">Contact</span><br>
       <div class="t">
         <div class="t_title">
-          SALES REP
+          SALES REPRESENTATIVE
         </div>
         <table>
           <tr *ngFor="let i of [1,2,3,4]">

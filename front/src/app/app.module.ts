@@ -25,6 +25,10 @@ import { ProductListComponent } from './products-page/product-list/product-list.
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { ProductCompareComponent } from './product-compare/product-compare.component';
 
+//Service
+import { FilterService } from './service/filter.service';
+
+
 registerLocaleData(en);
 
 @NgModule({

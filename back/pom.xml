@@ -51,9 +51,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.19</version>
         </dependency>
-
-
-
                 <dependency>
 
                     <groupId>com.fasterxml.jackson.core</groupId>
@@ -63,9 +60,6 @@
                     <version>2.10.2</version>
 
                 </dependency>
-
-
-
         <dependency>
 
             <groupId>org.springframework</groupId>
@@ -201,61 +195,13 @@
 
 
 
-        <!-- XML2JSONConvertor -->
-
-        <!--        <dependency>-->
-
-        <!--            <groupId>net.sf.json-lib</groupId>-->
-
-        <!--            <artifactId>json-lib</artifactId>-->
-
-        <!--            <version>2.4</version>-->
-
-        <!--            <classifier>jdk15</classifier>-->
-
-        <!--        </dependency>-->
-
-        <!--        <dependency>-->
-
-        <!--            <groupId>commons-io</groupId>-->
-
-        <!--            <artifactId>commons-io</artifactId>-->
-
-        <!--            <version>2.3</version>-->
-
-        <!--            <scope>compile</scope>-->
-
-        <!--        </dependency>-->
-
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-c3p0</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
 
-        <!--        <dependency>-->
 
-        <!--            <groupId>xom</groupId>-->
-
-        <!--            <artifactId>xom</artifactId>-->
-
-        <!--            <version>1.2.5</version>-->
-
-        <!--        </dependency>-->
-
-        <!--        <dependency>-->
-
-        <!--            <groupId>org.codehaus.jackson</groupId>-->
-
-        <!--            <artifactId>jackson-mapper-asl</artifactId>-->
-
-        <!--            <version>1.9.0</version>-->
-
-        <!--        </dependency>-->
-
-
-
-        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-jwt -->
 
         <dependency>
 

@@ -9,6 +9,7 @@
 }
 .compare{
   margin: 20px;
+  border-bottom: solid 1px gray;
 }
 .t_title{
   height: 33px;
@@ -18,23 +19,39 @@
   padding-left: 10px;
   padding-top: 5px;
 }
+td{
+  padding-left: 10px;
+}
 .pic{
   height:100px;
-  background-color: gray;
+  border: solid 1px gray;
+}
+.pic select{
+  position: relative;
+  top:-37px;
+  background-color:#4682B4;
+  color: white;
 }
 .name{
   margin-left: 10px;
   background-color: #F0F0F0;
   height: 33px;
-  width: 180px;
+  width: 200px;
   border-left: solid 1px gray;
   border-right: solid 1px gray;
+  color: black;
 }
 .detail{
   text-align: center;
-  width: 180px;
+  width: 200px;
   height: 33px;
   border-left: solid 1px gray;
   border-right: solid 1px gray;
-  border-bottom: solid 1px #F0F0F0;
+  border-top: solid 1px #F0F0F0;
+  color: black;
+}
+.min_max{
+  width: 25%;
+  float: left;
+  margin: 0;
 }

@@ -1,40 +1,63 @@
 <app-searchheader></app-searchheader>
 <div class="info">
   <div class="path">
-    mechanical > fans >item series
+    mechanical > fans > compare
     </div>
   <table class="compare">
   <tr>
     <th></th>
-    <th *ngFor="let product of productsToCompare" class="pic">pic</th>
+    <th *ngFor="let product of productsToCompare" class="pic">
+      <select class="">
+        <option value="">Add To</option>
+        <option value="">banana</option>
+        <option value="">apple</option>
+        <option value="">pear</option>
+      </select>
+    </th>
   </tr>
 
-  <tr class="t_title">
-    <td >Description</td>
-    <td  *ngFor="let attr of descriptions" ></td>
+  <tr >
+    <td class="t_title">Description</td>
+    <td  *ngFor="let attr of productsToCompare" class="t_title"></td>
   </tr>
-  <tr *ngFor="let attr of descriptions">
-    <td class="name">attr</td>
-    <td *ngFor="let product of productsToCompare" class="detail">product[attr]</td>
-  </tr>
-
-
-  <tr class="t_title">
-    <td class="detail">Type</td>
-    <td class="detail" *ngFor="let attr of descriptions"></td>
-  </tr>
-  <tr *ngFor="let attr of attributes">
-    <td class="name">xxxxxxx</td>
-    <td *ngFor="let product of productsToCompare" class="detail">ccccccccc</td>
+  <tr *ngFor="let attr of DESCRIPTION">
+    <td class="name">{{attr}}</td>
+    <td *ngFor="let product of productsToCompare" class="detail">{{product[attr]}}</td>
   </tr>
 
-  <tr class="t_title">
-    <td class="detail">Technical Specifications</td>
-    <td class="detail" *ngFor="let attr of descriptions"></td>
+  <tr >
+    <td class="t_title">Type</td>
+    <td class="t_title" *ngFor="let attr of productsToCompare"></td>
   </tr>
-  <tr *ngFor="let attr of attributes">
-    <td class="name">attr | parenthes</td>
-    <td *ngFor="let product of productsToCompare" class="detail">product.attributes[attr]</td>
+  <tr *ngFor="let attr of TYPE">
+    <td class="name">{{attr}}</td>
+    <td *ngFor="let product of productsToCompare" class="detail">{{product[attr]}}</td>
+  </tr>
+
+  <tr >
+    <td class="t_title">Technical Specifications</td>
+    <td class="t_title" *ngFor="let attr of productsToCompare"></td>
+  </tr>
+  <tr *ngFor="let attr of TS">
+    <td class="name">{{attr}}</td>
+    <td *ngFor="let product of productsToCompare" class="detail">{{product[attr]}}</td>
+  </tr>
+  <tr *ngFor="let attr of TS_plus">
+    <td class="name">{{attr}}</td>
+    <td *ngFor="let product of productsToCompare" class="detail">
+      <div class="min_max" style="background-color:#F0F0F0">
+        min
+      </div>
+      <div class="min_max">
+        {{product[attr+"_min"]}}
+      </div>
+      <div class="min_max" style="background-color:#F0F0F0">
+        max
+      </div>
+      <div class="min_max">
+        {{product[attr+"_max"]}}
+      </div>
+    </td>
   </tr>
 </table>
 </div>
