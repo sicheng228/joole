@@ -17,12 +17,16 @@ export class FilterService {
     this.compareProducts=items;
   }
   sendLimits(list){
-    // this.limits=list;
     this.subject.next(list);
   }
   getMessage(): Observable<any> {
     return this.subject.asObservable();
   }
+  pictures={"Series1-1-1":"https://images-na.ssl-images-amazon.com/images/I/51LY5Nw-ZnL._AC_SL1000_.jpg",
+  "Series2-2-2":"https://images-na.ssl-images-amazon.com/images/I/710BH9NjquL._AC_SL1500_.jpg",
+  "Series3-3-3":"https://images-na.ssl-images-amazon.com/images/I/61hJW0qoshL._AC_SL1500_.jpg",
+  "Series404-4":"https://images-na.ssl-images-amazon.com/images/I/81FBhfSN43L._AC_SL1500_.jpg",
+  "Series5-5-5-5-5":"https://images-na.ssl-images-amazon.com/images/I/51PruL-bL0L._AC_SL1000_.jpg"};
 
 
   products=[{"pid":1,"manufacturer":"Manufacturer1","model":"model1-1-1-1","series":"Series1-1-1","use_type":"commercial","application":"indoor","mounting_location":"roof","accessories":"withlight","model_year":2016,"airflow":5467.0,"power_min":1.95,"power_max":21.14,"operating_voltage_min":100.0,"operating_voltage_max":240.0,"fan_speed_min":35.0,"fan_speed_max":200.0,"number_of_fan_speed":7.0,"sound_at_max_speed":35.0,"fan_sweep_diameter":60.0,"height_min":12.3,"height_max":57.0,"weight":13.0,"firm":0,"glob":1487,"detail":"Airfoils  Moso bamboo  60 diameter;Airfoil Finishes Caramel Bamboo or Cocoa Bamboo;Hardware Finishes  Satin Nickel, Oil-Rubbed Bronze, Black or White;Motor  EC motor with digital inverter drive;Exceeds ENERGY STAR fan efficiency requirements by up to 1200%;Controls  Remote control Remote control (included), Haiku Home mobile app, Haiku Wall Control (optional), or Amazon Alexa-enabled devices (optional);Onboard Sensors  Ambient and surface temperature, relative humidity, and passive infrared sensors enable SenseME technology. Technology lets you automate your fans operation to maximize convenience and energy savings;Environment  Indoor use only.;Accessories  Haiku Light Kit and Haiku Wall Control. See respective spec sheets for details. A Tall Ceiling Kit and Stabilizer Kit are available for ceilings 14 feet (4.3 meters) or taller;Patented LED light module (optional) seamlessly integrates with the body of the fan;Made in the U.S.A.","sale_name":"Marty McFly","sale_phone":"+1 800 466 8200","sale_email":"techsupport@bigass.com","sale_web":"http://www.bigassfans.com","manu_department":"Technical Support","manu_phone":"+1 650 889 6222","manu_email":"marty@mcfly.com","manu_web":"http://www.test.com"},

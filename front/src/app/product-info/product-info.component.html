@@ -1,11 +1,11 @@
 <app-searchheader></app-searchheader>
 <div class="info">
   <div class="path">
-    mechanical > fans >item series
+    Mechanical > HVAC Fans > {{product.series}}
   </div>
   <div class="infoheader">
     <div class="pic">
-      pic
+      <img src={{pictures[product.series]}} alt="" class="headerPic">
     </div>
     <div class="model">
       {{product.manufacturer}} > {{product.series}} > {{product.model}}

@@ -8,6 +8,7 @@ import { FilterService } from "src/app/service/filter.service";
 })
 export class ProductCompareComponent implements OnInit {
   productsToCompare;
+  pictures=this.filterService.pictures;
 
   DESCRIPTION = ["manufacturer",'series',"model"]
   TYPE=["use_type", "application", "mounting_location", "accessories", "model_year"]

@@ -1,11 +1,11 @@
 <div class="pl">
   <div class="path">
-    idontknow>>>>>whatever
+    Mechanical > HVAC Fans
   </div>
   <div *ngFor="let item of products;" class="product">
     <div (click)="targetThisProduct(item)" routerLink="/productsInfo">
       <div class="pic">
-        picture
+        <img src={{pictures[item.series]}} alt="">
       </div>
       <div class="model">
         <p>{{item.manufacturer}}</p>

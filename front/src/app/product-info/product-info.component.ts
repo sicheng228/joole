@@ -12,6 +12,7 @@ export class ProductInfoComponent implements OnInit {
   details;
   sale=["name","email","phone","web"];
   manu=["department","email","phone","web"];
+  pictures=this.filterService.pictures;
 
   DESCRIPTION = ["manufacturer",'series',"model"]
   TYPE=["use_type", "application", "mounting_location", "accessories", "model_year"]

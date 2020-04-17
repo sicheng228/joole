@@ -6,6 +6,9 @@
 .path{
   height: 40px;
   margin-left: 20px;
+  font-size: 13px;
+  color: #004466;
+
 }
 .compare{
   margin: 20px;
@@ -28,9 +31,13 @@ td{
 }
 .pic select{
   position: relative;
-  top:-37px;
+  top:0px;
   background-color:#4682B4;
   color: white;
+}
+img{
+  width: 260px;
+  height:100px;
 }
 .name{
   margin-left: 10px;

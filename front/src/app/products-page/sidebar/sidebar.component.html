@@ -5,13 +5,13 @@
       <button id="save" (click)="productfilter.limits()">save</button>
       <button id="clear" (click)="productfilter.clear()">clear</button>
     </div>
-    <div [ngClass]="{'btn': true, 'blue': show}" (click)="showprd()">
+    <div [ngClass]="{'btn': true, 'blue': !show}" (click)="showprd()">
        product
     </div>
-    <div [ngClass]="{'btn': true, 'blue': !show}" (click)="showprj()">
+    <div [ngClass]="{'btn': true, 'blue': show}" (click)="showprj()">
       project
     </div>
   </div>
-    <app-productfilter #productfilter ></app-productfilter>
-    <app-projectfilter *ngIf="!show"></app-projectfilter>
+    <app-productfilter #productfilter [hidden]="show"></app-productfilter>
+    <app-projectfilter *ngIf="show"></app-projectfilter>
 </div>

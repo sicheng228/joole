@@ -5,6 +5,9 @@
 .path{
   height: 40px;
   margin-left: 20px;
+  font-size: 15px;
+  color: #004466;
+  padding-top: 10px;
 }
 .infoheader{
   height: 60px;
@@ -14,6 +17,11 @@
   width: 10%;
   height: 100%;
   float: left;
+}
+.headerPic{
+  width:160px;
+  height:55px;
+  margin: 2px;
 }
 .model{
   text-align: center;

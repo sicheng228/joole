@@ -15,8 +15,8 @@ export class ProductfilterComponent implements OnInit {
 
   ps=[{filterName:'Firm',filterRange:[0,15],max:15,min:0},
       {filterName:'Global',filterRange:[0,1500],max:1500,min:0}];
-  year1;
-  year2;
+  year1='';
+  year2='';
 
   constructor(private filterService: FilterService) { }
 
@@ -30,18 +30,25 @@ export class ProductfilterComponent implements OnInit {
     this.ps.forEach(element => {
       list.push(element.filterRange)
     });
+    if(this.year1=='' || this.year2==''){
+      list.push([0,9999]);
+    }else list.push([this.year1,this.year2]);
     this.filterService.sendLimits(list);
   }
   clear(){
     var list = new Array();
+    this.year1='';
+    this.year2='';
     this.ts.forEach(element => {
       list.push([element.min,element.max])
     });
     this.ps.forEach(element => {
       list.push([element.min,element.max])
     });
+    list.push([0,9999]);
     this.filterService.sendLimits(list);
     console.log(list);
+
   }
 
 }

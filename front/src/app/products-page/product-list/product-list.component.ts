@@ -12,6 +12,9 @@ export class ProductListComponent implements OnInit {
   limits;
   productsFiltered;
   subscription: Subscription;
+  productsToCompare;
+  pictures=this.filterService.pictures;
+
 
 
   constructor( private filterService: FilterService) {
@@ -21,7 +24,7 @@ export class ProductListComponent implements OnInit {
              this.products=this.initial.filter(product=>{
                if(product.airflow>=this.limits[0][0]&&product.airflow<=this.limits[0][1]&&product.power_max>=this.limits[1][0]&&product.power_max<=this.limits[1][1]&&
                product.sound_at_max_speed>=this.limits[2][0]&&product.sound_at_max_speed<=this.limits[2][1]&&product.fan_sweep_diameter>=this.limits[3][0]&&product.fan_sweep_diameter<=this.limits[3][1]&&
-               product.firm>=this.limits[4][0]&&product.firm<=this.limits[4][1]&&product.glob>=this.limits[5][0]&&product.glob<=this.limits[5][1]){
+               product.firm>=this.limits[4][0]&&product.firm<=this.limits[4][1]&&product.glob>=this.limits[5][0]&&product.glob<=this.limits[5][1]&&product.model_year>=this.limits[6][0]&&product.model_year<=this.limits[6][1]){
                return true;
              }else return false;});
            } else {
