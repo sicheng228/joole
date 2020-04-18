@@ -58,5 +58,14 @@ export class FilterService {
       let mySet = new Set();
       this.projects=rep;})
     }
+    updatePP(newPP){
+      this.pp.push(newPP);
+      this.http.post(BACKEND_URL + "/pp/update", this.pp).subscribe(
+        rep => {
+          this.router.navigate(["/login"]);
+          alert("Added successfully!")
+        });
+
+    }
 
   }

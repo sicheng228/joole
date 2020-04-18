@@ -14,11 +14,10 @@ export class ProductListComponent implements OnInit {
   productsFiltered;
   subscription: Subscription;
   productsToCompare;
+  selected;
+  newPP={project:{},product:{}};
   pictures=this.filterService.pictures;
   projects=this.filterService.projects;
-
-
-
   constructor( private filterService: FilterService, private authService: AuthService) {
     this.subscription = this.filterService.getMessage().subscribe(list => {
            if (list) {
@@ -58,4 +57,11 @@ export class ProductListComponent implements OnInit {
   goToCompare(){
     this.filterService.setCompareProducts(this.productsToCompare);
   }
+  getProduct(product,id){
+    this.newPP.product=product;
+    this.newPP.project=this.projects[id];
+    this.filterService.updatePP(this.newPP);
+
+  }
+
 }

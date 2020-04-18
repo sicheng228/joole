@@ -1,1 +1,11 @@
 <p>test works!</p>
+
+<div  *ngFor="let item of products">
+ <select  (change)="getProduct(item,$event.target.value)">
+   <option [ngValue]="0">xxx</option> -->
+   <option *ngFor="let project of projects;let i=index" value="{{i}}" >{{project.pname}}</option>
+ </select>
+</div>
+<!-- {{selected}} -->
+{{newPP.product.pdid}}
+{{newPP.project.pname}}
