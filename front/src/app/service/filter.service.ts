@@ -1,15 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { environment } from "../../environments/environment";
+import { HttpClient,HttpHeaders } from "@angular/common/http";
+import { Router } from "@angular/router";
 
+
+const BACKEND_URL = environment.apiUrl;
 
 @Injectable({ providedIn: "root" })
 
 export class FilterService {
   private subject = new Subject<any>();
-  constructor(){}
   targetProduct;
   compareProducts;
-  // limits;
+  products;
+  projects;
+  pp;
+  username;
+  projectsName;
+  constructor(private http: HttpClient,private router: Router){}
+
+  pictures={"Series1-1-1":"https://images-na.ssl-images-amazon.com/images/I/51LY5Nw-ZnL._AC_SL1000_.jpg",
+  "Series2-2-2":"https://images-na.ssl-images-amazon.com/images/I/710BH9NjquL._AC_SL1500_.jpg",
+  "Series3-3-3":"https://images-na.ssl-images-amazon.com/images/I/61hJW0qoshL._AC_SL1500_.jpg",
+  "Series404-4":"https://images-na.ssl-images-amazon.com/images/I/81FBhfSN43L._AC_SL1500_.jpg",
+  "Series5-5-5-5-5-":"https://images-na.ssl-images-amazon.com/images/I/51PruL-bL0L._AC_SL1000_.jpg"};
   setTargetProduct(item){
     this.targetProduct=item;
   }
@@ -22,16 +37,26 @@ export class FilterService {
   getMessage(): Observable<any> {
     return this.subject.asObservable();
   }
-  pictures={"Series1-1-1":"https://images-na.ssl-images-amazon.com/images/I/51LY5Nw-ZnL._AC_SL1000_.jpg",
-  "Series2-2-2":"https://images-na.ssl-images-amazon.com/images/I/710BH9NjquL._AC_SL1500_.jpg",
-  "Series3-3-3":"https://images-na.ssl-images-amazon.com/images/I/61hJW0qoshL._AC_SL1500_.jpg",
-  "Series404-4":"https://images-na.ssl-images-amazon.com/images/I/81FBhfSN43L._AC_SL1500_.jpg",
-  "Series5-5-5-5-5":"https://images-na.ssl-images-amazon.com/images/I/51PruL-bL0L._AC_SL1000_.jpg"};
+  getProducts(){
+    this.http.get<any>(BACKEND_URL + `/products/fans`).subscribe(rep=>{
+      this.products=rep;
+      console.log(this.products);
+      this.router.navigate(["/productsPage"]);
+    });
+  }
+  setUsername(un){
+    this.username=un;
+  }
+  getProjectProduct(){
+    this.http.get<any>(BACKEND_URL + `/pp/getAll`).subscribe(rep=>{
+      let mySet = new Set();
+      this.pp=rep;
+    });
+  }
+  getProjects(){
+    this.http.get<any>(BACKEND_URL + `/projects/getProjects`).subscribe(rep=>{
+      let mySet = new Set();
+      this.projects=rep;})
+    }
 
-
-  products=[{"pid":1,"manufacturer":"Manufacturer1","model":"model1-1-1-1","series":"Series1-1-1","use_type":"commercial","application":"indoor","mounting_location":"roof","accessories":"withlight","model_year":2016,"airflow":5467.0,"power_min":1.95,"power_max":21.14,"operating_voltage_min":100.0,"operating_voltage_max":240.0,"fan_speed_min":35.0,"fan_speed_max":200.0,"number_of_fan_speed":7.0,"sound_at_max_speed":35.0,"fan_sweep_diameter":60.0,"height_min":12.3,"height_max":57.0,"weight":13.0,"firm":0,"glob":1487,"detail":"Airfoils  Moso bamboo  60 diameter;Airfoil Finishes Caramel Bamboo or Cocoa Bamboo;Hardware Finishes  Satin Nickel, Oil-Rubbed Bronze, Black or White;Motor  EC motor with digital inverter drive;Exceeds ENERGY STAR fan efficiency requirements by up to 1200%;Controls  Remote control Remote control (included), Haiku Home mobile app, Haiku Wall Control (optional), or Amazon Alexa-enabled devices (optional);Onboard Sensors  Ambient and surface temperature, relative humidity, and passive infrared sensors enable SenseME technology. Technology lets you automate your fans operation to maximize convenience and energy savings;Environment  Indoor use only.;Accessories  Haiku Light Kit and Haiku Wall Control. See respective spec sheets for details. A Tall Ceiling Kit and Stabilizer Kit are available for ceilings 14 feet (4.3 meters) or taller;Patented LED light module (optional) seamlessly integrates with the body of the fan;Made in the U.S.A.","sale_name":"Marty McFly","sale_phone":"+1 800 466 8200","sale_email":"techsupport@bigass.com","sale_web":"http://www.bigassfans.com","manu_department":"Technical Support","manu_phone":"+1 650 889 6222","manu_email":"marty@mcfly.com","manu_web":"http://www.test.com"},
-  {"pid":2,"manufacturer":"Manufacturer4444","model":"Model4444","series":"Series404-4","use_type":"commercial","application":"indoor","mounting_location":"roof","accessories":"withoutlight","model_year":2015,"airflow":6254.0,"power_min":1295.0,"power_max":21.14,"operating_voltage_min":80.0,"operating_voltage_max":200.0,"fan_speed_min":25.0,"fan_speed_max":180.0,"number_of_fan_speed":6.0,"sound_at_max_speed":25.0,"fan_sweep_diameter":50.0,"height_min":20.3,"height_max":67.0,"weight":10.0,"firm":8,"glob":1233,"detail":" Best Choice Products 16in Adjustable Cooling Oscillating Standing Pedestal Fan w/ 7.5 Hour Timer, Double Blades, Remote Control, 3 Fan Modes, Front/Back Tilt  Black;Lasko Cool Colors 20\" Box 3-Speed Fan, Model #B20301, Black; Dual-blade design: built with a patented dual-blade design (large and small fan blades) for a more powerful and satisfying breeze, as well as a digital display for easy readin;Optimal functionality: 16' pedestal fan features seemingly endless options including 3 speeds, 10\" height adjustment, a front/back tilt mechanism; oscillating function and an electric timer that can be set up to 7.5 hour;3 fan modes; add even more functionality, as Steady mode gives consistent airflow, Wind mode mimics a soft wind that grows into a gust and Sleep mode gives the impression of a light breeze;Remote control included: designed with a large, round base for stability and includes a remote control that lets you adjust the fan while seated on your couch or stretched out on the bed;Safe and attractive: ETL listed fan has a sleek design that fits beautifully in any room","sale_name":"Sam ","sale_phone":"+1 633 466 8200","sale_email":"yinyin@bigass.com","sale_web":"http://www.world.com","manu_department":"Support","manu_phone":"+1 345 678 6222","manu_email":"wow@mcfly.com","manu_web":"http://www.hello.com"},
-  {"pid":3,"manufacturer":"Manufacturer2","model":"model2-2-2","series":"Series2-2-2","use_type":"commercial","application":"outdoor","mounting_location":"floor","accessories":"music","model_year":2018,"airflow":7900.0,"power_min":2.5,"power_max":19.0,"operating_voltage_min":80.0,"operating_voltage_max":209.0,"fan_speed_min":38.0,"fan_speed_max":210.0,"number_of_fan_speed":7.0,"sound_at_max_speed":31.0,"fan_sweep_diameter":60.0,"height_min":15.3,"height_max":50.0,"weight":12.0,"firm":12,"glob":1500,"detail":"360-degree tilt;Adjustable height;Strong wind;Heavy-duty drum fan with 3 speeds;Cord storage;High-velocity fan requires assembly;Heavy-duty pedestal base;Screw knob for easy height adjustment;Item dimensions: 19\"L x 25\"W x 53\"H;Item weight: 33.65 lbs","sale_name":"supreme ","sale_phone":"+1 111 222 333","sale_email":"hello@bigass.com","sale_web":"http://www.world.com","manu_department":" guess","manu_phone":"+1 123 999 0000","manu_email":"wow@mcfly.com","manu_web":"http://www.hello.com"},
-  {"pid":4,"manufacturer":"Manufacturer3","model":"model3333","series":"Series3-3-3","use_type":"gift","application":"indoor","mounting_location":"roof","accessories":"withoutlight","model_year":2019,"airflow":6000.0,"power_min":2.2,"power_max":19.5,"operating_voltage_min":94.0,"operating_voltage_max":190.0,"fan_speed_min":31.0,"fan_speed_max":190.0,"number_of_fan_speed":8.0,"sound_at_max_speed":25.0,"fan_sweep_diameter":59.0,"height_min":12.3,"height_max":99.0,"weight":9.0,"firm":4,"glob":1293,"detail":"such as living rooms, bedrooms, dining rooms or family rooms;QUIET, REVERSIBLE MOTOR: Conveniently quiet, 3 speed - reversible motor. Can be run in the winter to aid in rotating warm air and cutting down on energy costs;TWO-SIDED CEILING FAN BLADES: Get the perfect finish match with our reversible ceiling;blades. Each side has a unique finish;FLUSH MOUNT: Two piece CRS hugger mounting system included;PULL-CHAINS INCLUDED: Included for quick and easy on/off adjustments. This fan is also compatible with universal ceiling fan remote controls.","sale_name":"blablabla ","sale_phone":"+1 111 555 333","sale_email":"hello@goole.com","sale_web":"http://www.world.com","manu_department":" whatever","manu_phone":"+1 555 666 7777","manu_email":"itlize@Skye.com","manu_web":"http://www.ppppp.com"},
-  {"pid":5,"manufacturer":"Manufacturer5","model":"model555","series":"Series5-5-5-5-5","use_type":"gift","application":"oudoor","mounting_location":"floor","accessories":"music","model_year":2000,"airflow":5800.0,"power_min":1.3,"power_max":16.2,"operating_voltage_min":80.0,"operating_voltage_max":140.0,"fan_speed_min":23.0,"fan_speed_max":170.0,"number_of_fan_speed":6.0,"sound_at_max_speed":23.0,"fan_sweep_diameter":55.0,"height_min":12.3,"height_max":95.0,"weight":7.0,"firm":2,"glob":900,"detail":"such as living rooms, bedrooms, dining rooms or family rooms;QUIET,REVERSIBLE MOTOR: Conveniently quiet, 3 speed - reversible motor. Can be run in the winter to aid in rotating warm air and cutting down on energy costs;TWO-SIDED CEILING FAN BLADES: Get the perfect finish match with our reversible ceiling;blades. Each side has a unique finish;FLUSH MOUNT: Two piece CRS hugger mounting system included;PULL-CHAINS INCLUDED: Included for quick and easy on/off adjustments. This fan is also compatible with universal ceiling fan remote controls.","sale_name":"blablabla ","sale_phone":"+1 111 555 333","sale_email":"hello@goole.com","sale_web":"http://www.world.com","manu_department":" whatever","manu_phone":"+1 555 666 7777","manu_email":"itlize@Skye.com","manu_web":"http://www.ppppp.com"}]
-}
+  }

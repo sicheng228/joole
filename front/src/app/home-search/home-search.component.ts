@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-
+import { FilterService } from 'src/app/service/filter.service'
 
 @Component({
   selector: 'app-home-search',
@@ -9,15 +8,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeSearchComponent implements OnInit {
   toSearch;
-
-  constructor(private route: ActivatedRoute,
-    private router: Router) { }
+  username=this.filterService.username;
+  constructor(private filterService:FilterService) { }
 
   ngOnInit(): void {
   }
   goToProductsPage(){
     if(this.toSearch=="HVAC Fans"){
-      this.router.navigate([`/productsPage`]);
+      this
+      this.filterService.getProducts();
+      this.filterService.getProjects();
+      this.filterService.getProjectProduct();
     }else{
       alert("Not Exist!")
     }

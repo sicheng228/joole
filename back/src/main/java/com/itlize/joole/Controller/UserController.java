@@ -19,14 +19,15 @@ public class UserController {
     @Autowired
     private JwtTokenProvider jwtTokenProvider;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/signup")
-    public ResponseEntity<?> signup(@RequestParam String un,@RequestParam String pw){
-        if(userService.getByUsername(un)==null){
-           User u=new User(un,pw);
+    public ResponseEntity<?> signup(@RequestBody User u){
+        if(userService.getByUsername(u.getUsername())==null){
             userService.signUp(u);
-            return new ResponseEntity<>(u.toString(), HttpStatus.CREATED);
+            return new ResponseEntity<>(u, HttpStatus.CREATED);
         }else return new ResponseEntity<>("this user already existed",HttpStatus.CONFLICT);
     }
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/login")
     public ResponseEntity<?> login(Principal principal){
         if(principal == null){

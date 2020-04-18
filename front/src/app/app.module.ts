@@ -7,7 +7,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-
+import {AuthInterceptor } from 'src/app/auth/auth-interceptor'
+import {HTTP_INTERCEPTORS} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { HomeSearchComponent} from './home-search/home-search.component';
@@ -27,6 +28,8 @@ import { ProductCompareComponent } from './product-compare/product-compare.compo
 
 //Service
 import { FilterService } from './service/filter.service';
+import { TestComponent } from './test/test.component';
+import { AuthGuard } from './auth/auth.guard'
 
 
 registerLocaleData(en);
@@ -45,7 +48,8 @@ registerLocaleData(en);
     ProductListComponent,
     ProductInfoComponent,
     ProductsPageComponent,
-    ProductCompareComponent
+    ProductCompareComponent,
+    TestComponent
     ],
   imports: [
     BrowserModule,
@@ -56,7 +60,7 @@ registerLocaleData(en);
     HttpClientModule,
     NgZorroAntdModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: en_US },   { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

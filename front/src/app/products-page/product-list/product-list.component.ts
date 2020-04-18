@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterService } from 'src/app/service/filter.service';
+import { AuthService } from 'src/app/service/auth.service';
 import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-product-list',
@@ -14,10 +15,11 @@ export class ProductListComponent implements OnInit {
   subscription: Subscription;
   productsToCompare;
   pictures=this.filterService.pictures;
+  projects=this.filterService.projects;
 
 
 
-  constructor( private filterService: FilterService) {
+  constructor( private filterService: FilterService, private authService: AuthService) {
     this.subscription = this.filterService.getMessage().subscribe(list => {
            if (list) {
              this.limits=list;

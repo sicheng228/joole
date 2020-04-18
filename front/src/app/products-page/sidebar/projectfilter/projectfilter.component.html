@@ -1,1 +1,8 @@
-<p>projectfilter works!</p>
+
+<nz-collapse >
+  <nz-collapse-panel *ngFor="let name of projects" nzHeader={{name.pname}} >
+    <div *ngFor="let item of pp" class="filter">
+      <p *ngIf="item.project.pname == name.pname"> {{item.product.series}} </p>
+    </div>
+  </nz-collapse-panel>
+</nz-collapse>

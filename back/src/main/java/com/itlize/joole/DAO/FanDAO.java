@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface FanDAO {
     List<Product> getProductList();
+    Product getProductById(Integer id);
 }

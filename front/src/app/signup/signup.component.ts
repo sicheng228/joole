@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
+import { Subscription } from "rxjs";
+import { AuthService } from "../service/auth.service";
 
 
 @Component({
@@ -11,29 +13,23 @@ export class SignupComponent implements OnInit {
   uname;
   pword1;
   pword2;
+  private authStatusSub: Subscription;
+  // isLoading = false;
+  constructor(public authService: AuthService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
+      authStatus => {
+      }
+    );
   }
-  // ngOnInit() {
-  //     this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
-  //       authStatus => {
-  //         this.isLoading = false;
-  //       }
-  //     );
-  //   }
 
-    onSignup(form: NgForm) {
-      if (form.valid&&this.pword1==this.pword2) {
-        console.log("yes");
-      }else{console.log("no")}
-      // this.isLoading = true;
-      // this.authService.createUser(form.value.email, form.value.password);
-    }
-    //
-    // ngOnDestroy() {
-    //   this.authStatusSub.unsubscribe();
-    // }
-
+  ngOnDestroy() {
+    this.authStatusSub.unsubscribe();
+  }
+  onSignup(form: NgForm) {
+    if (form.valid&&this.pword1==this.pword2) {
+      this.authService.createUser(form.value.username, form.value.password1);
+    }else return;
+  }
 }

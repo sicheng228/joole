@@ -112,7 +112,7 @@ public class JwtTokenProvider {
     private String resolveToken(HttpServletRequest request){
         String bearerToken = request.getHeader(jwtHeaderString);
         if(bearerToken!=null && bearerToken.startsWith(jwtTokenPrefix)){
-            return bearerToken.substring(7, bearerToken.length());
+            return bearerToken.substring(7, bearerToken.length()).equals("")? null : bearerToken.substring(7,bearerToken.length());
         }
         return null;
     }

@@ -29,13 +29,10 @@
       <span style="font-size:15px;position:relative;left:50px;" >Compare</span>
       <select class="btn2">
         <option value="0">Add to</option>
-        <option value="1">Audi</option>
-        <option value="2">BMW</option>
-        <option value="3">Citroen</option>
-        <option value="4">Ford</option>
+        <option *ngFor="let project of projects" value="1">{{project.pname}}</option>
+
       </select>
     </div>
   </div>
   <button type="button" routerLink="/productsCompare" (click)="goToCompare()" style="background-color:#4682B4; position:relative; top:392px; color:white">Go To Compare</button>
-
 </div>

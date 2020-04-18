@@ -56,6 +56,4 @@
         <property name="packagesToScan" value="com.itlize.joole.Pojo">
         </property>
     </bean>
-
-    <!-- <beans:bean id="userService" class="com.itlize.joole.service.UserService"/> -->
 </beans>

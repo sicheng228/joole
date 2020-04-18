@@ -1,6 +1,7 @@
 package com.itlize.joole.DAO;
 
 import com.itlize.joole.Pojo.Product;
+import com.itlize.joole.Pojo.Project;
 import com.itlize.joole.Pojo.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -31,5 +32,20 @@ public class FanDAOImp implements FanDAO {
             return null;
         }
         return pList;
+    }
+
+    @Override
+    public Product getProductById(Integer id) {
+        Product p=null;
+        try{
+            Session session=factory.openSession();
+            String sql="FROM Product where pid=:id";
+            Query query=session.createQuery(sql);
+            query.setParameter("id", id);
+            p=(Product)query.uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return p;
     }
 }
