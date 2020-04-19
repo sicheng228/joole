@@ -35,7 +35,7 @@ public class ProjectProductDAOImp implements ProjectProductDAO{
             session.close();
         }
     }
-
+    @Override
     public boolean saveAll(List<ProjectProduct> ppList){
         Session session = factory.openSession();
         Transaction tx = null;
@@ -53,6 +53,7 @@ public class ProjectProductDAOImp implements ProjectProductDAO{
             session.close();
         }
     }
+    @Override
     public List<ProjectProduct> getAll(){
         List<ProjectProduct> ppList=null;
         try{
@@ -66,5 +67,39 @@ public class ProjectProductDAOImp implements ProjectProductDAO{
             return null;
         }
         return ppList;
+    }
+    @Override
+    public boolean deleteById(Integer ppid){
+        Session session = null;
+        try {
+            session = factory.openSession();
+            Transaction tx = session.beginTransaction();
+            Query qry = session.createQuery("DELETE FROM ProjectProduct where ppid=:id");
+            qry.setParameter("id", ppid);
+            qry.executeUpdate();
+            tx.commit();
+            return true;
+        } catch (Exception e) {
+            e.getStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+    @Override
+    public boolean add(ProjectProduct pp){
+        Session session = factory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.save(pp);
+            tx.commit();
+            return true;
+        } catch (Exception e){
+            e.getStackTrace();
+            return false;
+        }finally {
+            session.close();
+        }
     }
 }

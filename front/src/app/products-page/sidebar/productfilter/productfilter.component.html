@@ -41,3 +41,58 @@
       </nz-collapse-panel>
     </nz-collapse>
 </div>
+
+    <nz-modal [(nzVisible)]="isVisible" nzTitle="Find Fans" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+      <p class="modalTitle">Type</p>
+      <table>
+        <tr *ngFor="let item of modalData1">
+          <td id="part1" *ngFor="let detail of item;let i=index">
+            <input style="margin:5px;" type="radio" value="detail" *ngIf="i!=0">   <span [ngClass]="{'type': i==0}">{{detail}}</span>
+          </td>
+        </tr>
+        <tr >
+          <span class="type">Model Year:</span>
+          <div class="part2">
+            <input type="number" [(ngModel)]="year1"> —— <input type="number" [(ngModel)]="year2">
+          </div>
+
+        </tr>
+      </table>
+
+      <p class="modalTitle">Technical Details</p>
+      <table>
+        <tr *ngFor="let item of ts">
+          <span class="type">{{item.filterName}}</span>
+          <div class="part2">
+            <input type="number" [(ngModel)]="item.filterRange[0]"> —— <input type="number" [(ngModel)]="item.filterRange[1]">
+          </div>
+        </tr>
+        <tr>
+        <span class="type">Height (in)</span>
+        <div class="part2">
+          <input type="number" > —— <input type="number">
+        </div>
+        </tr>
+      </table>
+      <p class="modalTitle">Brand</p>
+      <table>
+        <tr>
+          <span class="type">Select Brands</span>
+          <nz-select  style="position:absolute;right:180px;width:100px;bottom:147px;">
+            <nz-option [nzLabel]="'apple'" [nzValue]="'apple'"></nz-option>
+            <nz-option [nzLabel]="'banana'" [nzValue]="'banana'"></nz-option>
+          </nz-select>
+        </tr>
+      </table>
+
+      <p class="modalTitle">Other</p>
+      <table>
+        <tr>
+          <span class="type">With the words</span>
+          <nz-select  style="position:absolute;right:180px;width:100px;bottom:80px;">
+            <nz-option [nzLabel]="'apple'" [nzValue]="'apple'"></nz-option>
+            <nz-option [nzLabel]="'banana'" [nzValue]="'banana'"></nz-option>
+          </nz-select>
+        </tr>
+      </table>
+    </nz-modal>

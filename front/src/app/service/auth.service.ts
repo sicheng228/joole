@@ -95,4 +95,23 @@ export class AuthService {
       token: token
     };
   }
+
+  autoAuthUser() {
+    const authInformation = this.getAuthData();
+    if (!authInformation) {
+      return;
+    }
+      this.token = authInformation.token;
+      this.isAuthenticated = true;
+      this.authStatusListener.next(true);
+  }
+  private getAuthData() {
+  const token = localStorage.getItem("token");
+  if (!token ) {
+    return;
+  }
+  return {
+    token: token
+  };
+}
 }

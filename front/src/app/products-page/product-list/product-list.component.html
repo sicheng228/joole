@@ -27,10 +27,9 @@
     <div class="btns">
       <input class="btn1"type="checkbox" (change)="handleCheckbox($event, item)">
       <span style="font-size:15px;position:relative;left:50px;" >Compare</span>
-      <select class="btn2" (change)="getProduct(item,$event.target.value)">
+      <select class="btn2" (change)="addProductToProject(item,$event.target.value)">
         <option value="">Add to</option>
         <option *ngFor="let project of projects;let i=index" value="{{i}}">{{project.pname}}</option>
-
       </select>
     </div>
   </div>

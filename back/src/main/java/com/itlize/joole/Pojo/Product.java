@@ -309,33 +309,4 @@ public class Product {
         this.glob = glob;
     }
 
-    //    @Override
-//    public String toString(){
-//        return "User[" +
-//                ", pid=" + pid  +
-//                ", manufacturer=" + manufacturer +
-//                ", model=" + model +
-//                ", series=" + series +
-//                ", use_type=" + use_type +
-//                ", application=" + application +
-//                ", mounting_location=" + mounting_location +
-//                ", accessories=" + accessories +
-//                ", model_year=" + model_year +
-//                ", airflow=" + airflow +
-//                ", power_min=" + power_min +
-//                ", power_max" + power_max +
-//                ", operating_voltage_min=" + operating_voltage_min +
-//                ", operating_voltage_max=" + operating_voltage_max +
-//                ", fan_speed_min=" + fan_speed_min +
-//                ", fan_speed_max=" + fan_speed_max +
-//                ", number_of_fan_speed=" + number_of_fan_speed +
-//                ", sound_at_max_speed=" + sound_at_max_speed +
-//                ", fan_sweep_diameter=" + fan_sweep_diameter +
-//                ", height_min=" + height_min +
-//                ", height_max=" + height_max  +
-//                ", weight=" + weight +
-//                ", firm='" + firm +
-//                ", glob=" + glob +
-//                ']';
-//    }
 }

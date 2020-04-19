@@ -34,4 +34,12 @@ public class ProjectProductServiceImp implements ProjectProductService{
             return null;
         }
     }
+    @Override
+    public boolean deleteById(Integer ppid){
+        return projectProductDAO.deleteById(ppid);
+    }
+    @Override
+    public boolean add(ProjectProduct pp){
+        return projectProductDAO.add(pp);
+    }
 }

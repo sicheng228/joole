@@ -14,11 +14,9 @@
       Past specifications: {{product.firm}} firm / {{product.glob}} global
     </div>
     <select class="btn">
-      <option value="0">Add to</option>
-      <option value="1">Audi</option>
-      <option value="2">BMW</option>
-      <option value="3">Citroen</option>
-      <option value="4">Ford</option>
+      <option value="">Add to</option>
+      <option *ngFor="let project of projects;let i=index" value="{{i}}">{{project.pname}}</option>
+
     </select>
   </div>
   <div class="title">

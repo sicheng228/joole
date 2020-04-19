@@ -7,11 +7,9 @@
   <tr>
     <th></th>
     <th *ngFor="let product of productsToCompare" class="pic">
-      <select class="">
-        <option value="">Add To</option>
-        <option value="">banana</option>
-        <option value="">apple</option>
-        <option value="">pear</option>
+      <select class="btn">
+        <option value="">Add to</option>
+        <option *ngFor="let project of projects;let i=index" value="{{i}}">{{project.pname}}</option>
       </select>
       <img src={{pictures[product.series]}} alt="">
     </th>

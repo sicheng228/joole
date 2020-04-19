@@ -5,20 +5,25 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
-export class TestComponent implements OnInit {
-  projects=[{pid:1,pname:"bla"},{pid:2,pname:"2gue"},{pid:3,pname:"3ggg"}];
-  products=[{pdid:4},{pdid:5},{pdid:6},{pdid:7}];
-  selected;
-  newPP={"product":{pdid:888},"project":{pid:999,pname:"999"}};
-  constructor() { }
+export class TestComponent {
+  modalData1=[["Use Type","Commercial", "Industrial", "Residential"],["Application","Indoor","Outdoor"],["Mounting Location","Roof","wall","FreeStanding"],["Accessories","With light","Without light"]];
+  modalData2=[["Airflow (CFM)"],["Max power (W)"],"Sound at max speed (dBA)","Fan sweep diameter (in)","Height (in)"]
 
-  ngOnInit(): void {
+  isVisible = false;
+
+  constructor() {}
+
+  showModal(): void {
+    this.isVisible = true;
   }
 
-  getProduct(product,id){
-    this.newPP.product=product;
-    this.newPP.project=this.projects[id];
-    console.log(product);
-    console.log(this.projects[id]);
+  handleOk(): void {
+    console.log('Button ok clicked!');
+    this.isVisible = false;
+  }
+
+  handleCancel(): void {
+    console.log('Button cancel clicked!');
+    this.isVisible = false;
   }
 }

@@ -45,3 +45,11 @@
     background-color: #264d73;
     color:white;
 }
+.advance{
+  position:relative;
+  right:-60px;
+  top:2px;
+  height:27px;
+  width:20px;
+  padding-left: 5px;
+}

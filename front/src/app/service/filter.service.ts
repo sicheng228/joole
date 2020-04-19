@@ -11,6 +11,7 @@ const BACKEND_URL = environment.apiUrl;
 
 export class FilterService {
   private subject = new Subject<any>();
+  private subjectListenPP = new Subject<any>();
   targetProduct;
   compareProducts;
   products;
@@ -49,23 +50,31 @@ export class FilterService {
   }
   getProjectProduct(){
     this.http.get<any>(BACKEND_URL + `/pp/getAll`).subscribe(rep=>{
-      let mySet = new Set();
       this.pp=rep;
     });
   }
   getProjects(){
     this.http.get<any>(BACKEND_URL + `/projects/getProjects`).subscribe(rep=>{
-      let mySet = new Set();
       this.projects=rep;})
+      // console.log(this.projects);
     }
-    updatePP(newPP){
-      this.pp.push(newPP);
-      this.http.post(BACKEND_URL + "/pp/update", this.pp).subscribe(
+
+    getListenPP(): Observable<any> {
+      return this.subjectListenPP.asObservable();
+    }
+    addPP(newPP){
+      this.http.post(BACKEND_URL + "/pp/add", newPP).subscribe(
         rep => {
-          this.router.navigate(["/login"]);
+          // this.pp=rep;
+          console.log(this.pp);
           alert("Added successfully!")
         });
-
+    }
+    deletePP(ppToDelete){
+      this.http.post(BACKEND_URL + "/pp/deleteById", ppToDelete).subscribe(
+        rep => {
+          alert("Deleted successfully!")
+        });
     }
 
   }

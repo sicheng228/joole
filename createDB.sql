@@ -42,4 +42,8 @@ values("model1-1-1-1","Manufacturer1","Series1-1-1","commercial","indoor","roof"
 "such as living rooms, bedrooms, dining rooms or family rooms;QUIET, REVERSIBLE MOTOR: Conveniently quiet, 3 speed - reversible motor. Can be run in the winter to aid in rotating warm air and cutting down on energy costs;TWO-SIDED CEILING FAN BLADES: Get the perfect finish match with our reversible ceiling;blades. Each side has a unique finish;FLUSH MOUNT: Two piece CRS hugger mounting system included;PULL-CHAINS INCLUDED: Included for quick and easy on/off adjustments. This fan is also compatible with universal ceiling fan remote controls.",
 " whatever","+1 555 666 7777","http://www.ppppp.com","itlize@Skye.com","blablabla ","+1 111 555 333","http://www.world.com","hello@goole.com"
 );
+
 select * from Product;
+select * from Project;
+select * from ProjectProduct;
+select * from User;

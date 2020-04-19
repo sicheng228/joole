@@ -11,9 +11,16 @@ export class ProjectfilterComponent implements OnInit {
   projects=this.filterService.projects;
   pp=this.filterService.pp;
 
-  constructor(private filterService:FilterService) { }
+  constructor(private filterService:FilterService) {
+    }
 
   ngOnInit(): void {
+    // console.log(this.pp);
+    // console.log(this.filterService.projects);
+  }
+  deleteThisPP(item,i){
+    this.filterService.pp.splice(i,1);
+    this.filterService.deletePP(item);
   }
 
 }

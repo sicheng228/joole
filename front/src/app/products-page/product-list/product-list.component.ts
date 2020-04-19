@@ -31,8 +31,8 @@ export class ProductListComponent implements OnInit {
            } else {
              this.limits = [];
            }
-           console.log(list);
-           console.log(this.products);
+           // console.log(list);
+           // console.log(this.products);
          });}
 
   ngOnInit(): void {
@@ -57,11 +57,12 @@ export class ProductListComponent implements OnInit {
   goToCompare(){
     this.filterService.setCompareProducts(this.productsToCompare);
   }
-  getProduct(product,id){
+  addProductToProject(product,id){
     this.newPP.product=product;
     this.newPP.project=this.projects[id];
-    this.filterService.updatePP(this.newPP);
-
+    let toAdd=JSON.parse(JSON.stringify(this.newPP));
+    this.filterService.pp.push(toAdd);
+    this.filterService.addPP(this.newPP);
   }
 
 }

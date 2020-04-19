@@ -21,7 +21,7 @@ public class ProjectController {
     public ResponseEntity<?> addProject(@RequestBody String pname){
         try{
             projectService.addProject(pname);
-            return new ResponseEntity<>(pname+" has been added!",HttpStatus.OK);
+            return new ResponseEntity<>("{Has been added!}",HttpStatus.OK);
         }catch (Exception e){
             e.getStackTrace();
             return new ResponseEntity<>("this user already existed",HttpStatus.CONFLICT);

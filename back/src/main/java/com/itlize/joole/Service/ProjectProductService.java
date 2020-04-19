@@ -7,5 +7,7 @@ import java.util.List;
 public interface ProjectProductService {
     boolean updateAll(List<ProjectProduct> ppList);
     List<ProjectProduct> getAll();
+    boolean deleteById(Integer ppid);
+    boolean add(ProjectProduct pp);
 
 }

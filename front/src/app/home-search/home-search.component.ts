@@ -15,7 +15,6 @@ export class HomeSearchComponent implements OnInit {
   }
   goToProductsPage(){
     if(this.toSearch=="HVAC Fans"){
-      this
       this.filterService.getProducts();
       this.filterService.getProjects();
       this.filterService.getProjectProduct();

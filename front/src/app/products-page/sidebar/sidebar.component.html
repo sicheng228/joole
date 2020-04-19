@@ -4,6 +4,7 @@
       <span style="position:relative;left:20px;top:6px;font-size:20px;color:gray;">search</span>
       <button id="save" (click)="productfilter.limits()">save</button>
       <button id="clear" (click)="productfilter.clear()">clear</button>
+      <button nz-button [nzType]="'primary'" (click)="productfilter.showModal()" class="advance"><span>...</span></button>
     </div>
     <div [ngClass]="{'btn': true, 'blue': !show}" (click)="showprd()">
        product

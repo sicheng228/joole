@@ -1,0 +1,24 @@
+.modalTitle{
+  background-color: #F0F0F0;
+  height: 20px;
+  color: black;
+}
+nz-modal tr{
+  height: 30px;
+}
+#part1{
+  width: 25%;
+}
+.type{
+  font-weight: bold;
+  color: gray;
+}
+.part2{
+  width: 200px;
+  display: inline-block;
+  position: absolute;
+  right: 100px;
+}
+.part2 input{
+  width: 60px;
+}

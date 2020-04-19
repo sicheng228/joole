@@ -1,11 +1,49 @@
-<p>test works!</p>
+<button nz-button [nzType]="'primary'" (click)="showModal()"><span>Advance</span></button>
+    <nz-modal [(nzVisible)]="isVisible" nzTitle="Find Fans" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+      <p class="modalTitle">Type</p>
+      <table>
+        <tr *ngFor="let item of modalData1">
+          <td id="part1" *ngFor="let detail of item;let i=index">
+            <input style="margin:5px;" type="radio" value="detail" *ngIf="i!=0">   <span [ngClass]="{'type': i==0}">{{detail}}</span>
+          </td>
+        </tr>
+        <tr >
+          <span class="type">Model Year:</span>
+          <div class="part2">
+            <input type="number" name="" value=""> —— <input type="number" name="" value="">
+          </div>
 
-<div  *ngFor="let item of products">
- <select  (change)="getProduct(item,$event.target.value)">
-   <option [ngValue]="0">xxx</option> -->
-   <option *ngFor="let project of projects;let i=index" value="{{i}}" >{{project.pname}}</option>
- </select>
-</div>
-<!-- {{selected}} -->
-{{newPP.product.pdid}}
-{{newPP.project.pname}}
+        </tr>
+      </table>
+
+      <p class="modalTitle">Technical Details</p>
+      <table>
+        <tr *ngFor="let item of modalData2">
+          <span class="type">{{item}}</span>
+          <div class="part2">
+            <input type="number" name="" value=""> —— <input type="number" name="" value="">
+          </div>
+        </tr>
+      </table>
+      <p class="modalTitle">Brand</p>
+      <table>
+        <tr>
+          <span class="type">Select Brands</span>
+          <nz-select [ngModel]="'Zhejiang'" style="position:absolute;right:180px;">
+            <nz-option [nzLabel]="'Zhejiang'" [nzValue]="'Zhejiang'"></nz-option>
+            <nz-option [nzLabel]="'Jiangsu'" [nzValue]="'Jiangsu'"></nz-option>
+          </nz-select>
+        </tr>
+      </table>
+
+      <p class="modalTitle">Other</p>
+      <table>
+        <tr>
+          <span class="type">With the words</span>
+          <nz-select [ngModel]="'Zhejiang'" style="position:absolute;right:180px;">
+            <nz-option [nzLabel]="'Zhejiang'" [nzValue]="'Zhejiang'"></nz-option>
+            <nz-option [nzLabel]="'Jiangsu'" [nzValue]="'Jiangsu'"></nz-option>
+          </nz-select>
+        </tr>
+      </table>
+    </nz-modal>
