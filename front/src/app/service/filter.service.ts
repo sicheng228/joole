@@ -73,7 +73,14 @@ export class FilterService {
     deletePP(ppToDelete){
       this.http.post(BACKEND_URL + "/pp/deleteById", ppToDelete).subscribe(
         rep => {
-          alert("Deleted successfully!")
+          alert("Deleted successfully!");
+        });
+    }
+    addNewProject(newProject){
+      this.http.post(BACKEND_URL + "/projects/add", newProject).subscribe(
+        rep => {
+          // this.projects=rep;
+          console.log(rep);
         });
     }
 

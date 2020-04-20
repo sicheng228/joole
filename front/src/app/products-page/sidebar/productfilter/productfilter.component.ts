@@ -63,7 +63,6 @@ export class ProductfilterComponent implements OnInit {
     list.push([0,9999]);
     this.filterService.sendLimits(list);
     this.isVisible = false;
-
   }
   showModal(): void {
     this.isVisible = true;

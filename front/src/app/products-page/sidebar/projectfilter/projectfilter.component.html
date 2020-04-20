@@ -4,8 +4,12 @@
     <div *ngFor="let item of pp; let i = index" class="filter">
       <div *ngIf="name.pname==item.project.pname" style="height: 30px;">
         <span>{{item.product.series}}</span>
-        <button type="button" name="button" (click)="deleteThisPP(item,i)" style="float: right;">X</button>
+        <button type="button" name="button" (click)="deleteThisPP(item,i)" style="float: right;color:#DC143C">delete</button>
       </div>
     </div>
   </nz-collapse-panel>
+    <button nz-button [nzType]="'primary'" (click)="showModal()" style="width:100%"><span>add new Project</span></button>
 </nz-collapse>
+  <nz-modal [(nzVisible)]="isVisible" nzTitle="New Project" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    Project name: <input type="text" name="" [(ngModel)]="newProjectName.pname">
+  </nz-modal>

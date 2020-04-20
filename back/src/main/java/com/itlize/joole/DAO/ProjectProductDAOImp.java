@@ -17,6 +17,8 @@ public class ProjectProductDAOImp implements ProjectProductDAO{
 
     @Autowired
     SessionFactory factory;
+    @Autowired
+    ProjectDAO projectDAO;
 
     @Override
     public boolean deleteAll() {
@@ -102,4 +104,25 @@ public class ProjectProductDAOImp implements ProjectProductDAO{
             session.close();
         }
     }
+    @Override
+    public ProjectProduct findByProjectAndProdcuct(Project pj, Product pd) {
+        ProjectProduct pp = null;
+        Session session = null;
+        try {
+            session = factory.openSession();
+            String sql="FROM ProjectProduct where project_pid = :pj and product_pid=:pd";
+            Query qry=session.createQuery(sql);
+            qry.setParameter("pj", projectDAO.findProjectByName(pj.getPname()).getPid());
+            qry.setParameter("pd", pd.getPid());
+            pp = (ProjectProduct) qry.uniqueResult();
+            return pp;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
+
+    }
+
 }

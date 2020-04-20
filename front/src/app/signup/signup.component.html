@@ -5,7 +5,7 @@
     <span id="dot1"></span>
     <span id="dot2"></span>
     <span class="joole" style=" position:relative;left: -20px">le</span>
-    <p id="des">Buiding Project Seletion Platform</p>
+    <p id="des">Building Project Seletion Platform</p>
     <form (submit)="onSignup(SignupForm)" #SignupForm="ngForm">
       <p style="color:red" [hidden]="username.pristine||uname.length>=4">Reguired and min length: 4</p>
       <input id="username" name="username" #username="ngModel" [(ngModel)]="uname" placeholder="Username or Email" required minlength="4"><br>

@@ -23,6 +23,8 @@ public class ProjectProductController {
 
     @Autowired
     ProjectProductService projectProductService;
+    @Autowired
+    ProjectProductDAO projectProductDAO;
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/getAll")
@@ -51,6 +53,9 @@ public class ProjectProductController {
     @PostMapping("/add")
     public ResponseEntity<?> add(@RequestBody ProjectProduct pp){
         try{
+            if (pp.getProject().getPid()==null){// if it is a new project then need to get the whole project(include pid,pname)
+                pp = new ProjectProduct( projectDAOImp.findProjectByName(pp.getProject().getPname()),pp.getProduct());
+            }
             projectProductService.add(pp);
             return new ResponseEntity<>(projectProductService.getAll(), HttpStatus.OK);
         }catch (Exception e){
@@ -62,6 +67,10 @@ public class ProjectProductController {
     @PostMapping("/deleteById")
     public ResponseEntity<?> delete(@RequestBody ProjectProduct pp){
         try{
+            if (pp.getPpid()==null){// if it is a new ProjectProduct then we need to find it in DB first and then delete it;
+                System.out.println(pp.getProject().getPname()+pp.getProduct().getPid());
+                pp = projectProductDAO.findByProjectAndProdcuct(pp.getProject(),pp.getProduct());
+            }
             projectProductService.deleteById(pp.getPpid());
             return new ResponseEntity<>(projectProductService.getAll(), HttpStatus.OK);
         }catch (Exception e){

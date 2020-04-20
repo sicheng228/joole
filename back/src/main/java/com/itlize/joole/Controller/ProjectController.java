@@ -18,10 +18,10 @@ public class ProjectController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/add")
-    public ResponseEntity<?> addProject(@RequestBody String pname){
+    public ResponseEntity<?> addProject(@RequestBody Project p){
         try{
-            projectService.addProject(pname);
-            return new ResponseEntity<>("{Has been added!}",HttpStatus.OK);
+            projectService.addProject(p.getPname());
+            return new ResponseEntity<>(projectService.findAllProjects(),HttpStatus.OK);
         }catch (Exception e){
             e.getStackTrace();
             return new ResponseEntity<>("this user already existed",HttpStatus.CONFLICT);

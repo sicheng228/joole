@@ -11,7 +11,6 @@ public class ProjectProduct {
 
     @ManyToOne(targetEntity = Project.class,cascade = CascadeType.DETACH)
     private Project project;
-
     @ManyToOne(targetEntity = Product.class,cascade = CascadeType.DETACH)
     private Product product;
 
