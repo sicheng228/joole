@@ -98,7 +98,7 @@
 
             <artifactId>spring-security-core</artifactId>
 
-            <version>5.2.2.RELEASE</version>
+            <version>5.5.7</version>
 
         </dependency>
 
